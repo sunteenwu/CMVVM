@@ -1,0 +1,26 @@
+﻿<Page
+    x:Class="BindTextBox.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:BindTextBox"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <StackPanel Orientation="Vertical" >
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="25*"/>
+                    <ColumnDefinition Width="50*"/>
+                    <ColumnDefinition Width="25*"/>
+                </Grid.ColumnDefinitions>
+                <Button x:Name="SubtractQytyButton" Grid.Column="0" Content="-" FontSize="24" HorizontalAlignment="Stretch" Command="{Binding SubtractQuantityCommand}"
+                        Margin="5,0"   FontWeight="ExtraBold" />
+                <TextBox x:Name="QuantityTextBox" Grid.Column="1" HorizontalAlignment="Stretch" FontSize="24" Margin="5,0"                           
+                         Text="{Binding QuantityT, Mode=TwoWay }" MaxLength="5" TextAlignment="Center"/>
+                <Button  x:Name="AddQytyButton" Grid.Column="2" Content="+" FontSize="24" HorizontalAlignment="Stretch" Command="{Binding AddQuantityCommand}" />
+            </Grid>
+        </StackPanel>
+    </Grid>
+</Page>
